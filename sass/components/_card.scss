@@ -1,18 +1,40 @@
 .card {
     perspective: 150rem;
     -moz-perspective: 150rem;
+    position: relative;
+    // We add this because when we use position absolute, they are taken out of natural flow, therefore the parents collapsed and lost its height
+    // When this happens with the floats, we have a clear fix, but with position absolute, there is no such things, at least not with pure CSS
+    height: 50rem; 
 
     &__side {
         background-color: orangered;
         color: white;
         font-size: 2rem;
+
         height: 50rem;
-        transition: all .8s;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+
+        &--front {
+            background-color: orangered;
+        }
+
+        &--back {
+            background-color: green;
+            transform: rotateY(180deg);
+        }
     }
 
-
-
-    &:hover &__side {                   // .card:hover .card__side, so we hover the card, and when the card is hovered, then the card side will be transformed.
+    // .card:hover .card__side, so we hover the card, and when the card is hovered, then the card side will be transformed.
+    &:hover &__side--front {                   
         transform: rotateY(180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
     }
 }
