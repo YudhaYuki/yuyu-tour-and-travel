@@ -1,0 +1,18 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+
+    &__side {
+        background-color: orangered;
+        color: white;
+        font-size: 2rem;
+        height: 50rem;
+        transition: all .8s;
+    }
+
+
+
+    &:hover &__side {                   // .card:hover .card__side, so we hover the card, and when the card is hovered, then the card side will be transformed.
+        transform: rotateY(180deg);
+    }
+}
