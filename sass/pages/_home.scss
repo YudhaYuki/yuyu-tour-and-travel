@@ -39,7 +39,12 @@
 }
 
 .book {
-    background-image: url(../img/nat-10.jpg);
+    // We can use percentage in linear gradient like example below, so not only "to right bottom" as in pervious examples
+    background-image: linear-gradient(105deg, 
+        rgba($color-white, .9) 0%,
+        rgba($color-white, .9) 50%,
+        transparent 50%), 
+        url(../img/nat-10.jpg);
     background-size: 100%; // we can also use cover
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
