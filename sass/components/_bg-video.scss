@@ -6,4 +6,13 @@
     width: 100%;
     z-index: -1;
     opacity: .15;
+    overflow: hidden;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        // to fit the background to the entire session
+        // It fills the entire parent, while still maintaining its aspect ratio
+        object-fit: cover; 
+    }
 }
