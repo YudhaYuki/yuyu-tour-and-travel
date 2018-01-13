@@ -7,5 +7,12 @@
     padding: 6rem;
     font-size: $default-font-size;
 
-
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        background-color: orangered;
+        float: left; // Beside it has to be floated, it has to have width and height as well. And then it works
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-shape-outside: circle(50% at 50% 50%);
+    }
 }
