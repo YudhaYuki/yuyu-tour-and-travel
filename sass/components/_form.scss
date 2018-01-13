@@ -31,12 +31,24 @@
 
     }
 
-
-
-
-
     &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
 
+
+    // normally it wont work because label isnt input child, but sibling.
+    // however we can use selector called sibling selector (Adjection sibling) 
+    // with this sign + (next to element) or ~ (After some more elements such as div btn etc)
+    // However to use sibling selector, we must first declaire the input and then label in out HTML code otherwise, it wont work
+    &__input:placeholder-shown + &__label {  
+        opacity: 0;
+        visibility: hidden; // why dont we just use visibility hidden without opacity, because we can not animate the visibility
+        transform: translateY(-4rem);
     }
 
 
