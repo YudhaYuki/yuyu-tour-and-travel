@@ -135,4 +135,19 @@
     &__button:hover &__icon::after {
         top: 1rem;
     }
+
+    // When the check-box is selected, then we select its brother (button), and then we select the button's child (icon)
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
 }
