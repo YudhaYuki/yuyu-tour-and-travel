@@ -571,7 +571,9 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1500; }
+  z-index: 1500;
+  opacity: 0;
+  width: 0; }
 
 .navigation__list {
   position: absolute;
@@ -603,6 +605,9 @@ body {
   background-position: 100%;
   color: #55c57a;
   transform: translateX(1rem); }
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80); }
 
 .section-about {
   background-color: #f7f7f7;

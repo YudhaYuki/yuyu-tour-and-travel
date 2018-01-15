@@ -35,6 +35,9 @@
         top: 0;
         right: 0;
         z-index: 1500; // this one is in the middle, between background and button
+
+        opacity: 0;  // If we use this alone, the link is invisible but still there, so the hand sign is there when we hover it, therefore we need to set width to 0 as well
+        width: 0;
     }
 
     &__list {
@@ -77,5 +80,13 @@
             transform: translateX(1rem);
         }
 
+    }
+
+    // So we have our checkbox, lable and background.
+    // So we hit the lable and the checkbox become checked
+    // And then we want the navigation background here to become visible
+
+    &__checkbox:checked ~ &__background {  // Checkbox hack by implementing adjection AGAIN
+        transform: scale(80);
     }
 }
