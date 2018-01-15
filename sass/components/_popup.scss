@@ -10,33 +10,9 @@
     visibility: hidden;  // hiding the pop up
     transition: all .3s;
 
-    &:target {
-        opacity: 1; // calling the pop up back
-        visibility: visible;
-    }
-
-    &__close {
-        &:link,
-        &:visited {
-            color: $color-grey-dark;
-            position: absolute;  // So it will be positioned to its first positioned parent
-            top: 2.5rem;
-            right: 2.5rem;
-            font-size: 3rem;
-            text-decoration: none;
-            display: inline-block;
-            transition: all .2s;
-            line-height: 1;
-        }
-
-        &:hover {
-            color: $color-primary;
-        }
-    }
-    
-
     &__content {
         @include absCenter;
+
         width: 75%;
         // height: 50rem;  // It was used for error and try purposes
         background-color: $color-white;
@@ -44,6 +20,11 @@
         border-radius: 3px;
         display: table;
         overflow: hidden; // so that part of the image which is overflowing this box will not be visible anymore
+        opacity: 0;
+        // We can not use transform in this case, because we already have one. You can only have one transform or one property in each declaration block.
+        // But we can put them in the same , so basically we are repeating the one we have coming from mixin, but thats the only way to do it
+        transform: translate(-50%, -50%) scale(.25) ;
+        transition: all .4s .2s;  // delayed by .2s
     }
 
     &__left {
@@ -81,5 +62,34 @@
         hyphens: auto;
     }
 
+    // Open states 
+    &:target {
+        opacity: 1; // calling the pop up back
+        visibility: visible;
+    }
+
+    // Make the popup feels like moving towards the user, change little bit the &__content
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) ;
+    }
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;  // So it will be positioned to its first positioned parent
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
 
 }
