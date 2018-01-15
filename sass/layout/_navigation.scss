@@ -124,7 +124,7 @@
             transition: all .2s;
         }
 
-        &::before { top: -.8rem; }
+        &::before { top: -.8rem;}  // try this &::before { top: -.8rem; transform-origin: right}
         &::after {top: .8rem; }
     }
 
