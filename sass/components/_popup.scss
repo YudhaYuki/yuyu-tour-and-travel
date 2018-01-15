@@ -7,14 +7,32 @@
     background-color: rgba($color-black, .8);
     z-index: 9999;
     opacity: 0;
-    visibility: hidden;
+    visibility: hidden;  // hiding the pop up
     transition: all .3s;
 
     &:target {
-        opacity: 1;
+        opacity: 1; // calling the pop up back
         visibility: visible;
     }
 
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;  // So it will be positioned to its first positioned parent
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
     
 
     &__content {
