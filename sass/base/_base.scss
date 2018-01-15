@@ -8,27 +8,24 @@
 
 html {
     // This defines what 1rem is
-    font-size: 62.5%;
+    font-size: 62.5%;  // 1rem is equal to 10px;  10px/16px = 62.5%
 
-    // This here is basically the content that I  parsed into the mixin
-    @include respond-phone {
-        font-size: 50%;
+    @include respond(tab-land) {
+        font-size: 56.25%;  // if we change it into 56.25% for example, it means that now 1rem = 9px, 8/16 = 50%
     }
 
     @include respond(tab-port) {
-        font-size: 60%;
+        font-size: 50%;  // if we change it into 50% for example, it means that now 1rem = 8px, 8/16 = 50%
     }
 
-    @include respond(tab-land) {
-        font-size: 70%;
-    }
+    // This here is basically the content that I  parsed into the mixin
+    // @include respond(phone) {
+    //     font-size: 30%; // 4.8px;
+    //}
 
     @include respond(big-desktop) {
-        font-size: 80%;
+        font-size: 75%;  // 1rem = 12, 12;16 = 75%
     }
-
-
-
 
 }
 
