@@ -13,6 +13,7 @@
         border-radius: 50%;
         z-index: 2000;
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        text-align: center;
     }
 
     &__background {
@@ -86,10 +87,11 @@
 
     }
 
+
+    // FUNCTIONALITY
     // So we have our checkbox, lable and background.
     // So we hit the lable and the checkbox become checked
     // And then we want the navigation background here to become visible
-
     &__checkbox:checked ~ &__background {  // Checkbox hack by implementing adjection AGAIN
         transform: scale(80);
     }
@@ -97,5 +99,30 @@
     &__checkbox:checked ~ &__nav { 
         opacity: 1;  // Above in nav, it was 0 and we set it back to 1
         width: 100%;  // Above in nav, it was 0 and we set it back to 100
+    }
+
+    // ICON
+    &__icon {
+        position: relative;
+        margin-top: 3.5rem;
+        
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-3;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute; 
+            left: 0;
+        }
+
+        &::before { top: -.8rem; }
+        &::after {top: .8rem; }
     }
 }
