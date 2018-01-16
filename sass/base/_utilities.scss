@@ -6,7 +6,7 @@
     margin-bottom: 4rem !important;
 
     @include respond(tab-port) {
-        padding-bottom: 3rem !important;
+        padding-bottom: 0rem !important;
     }
 }
 
@@ -14,7 +14,7 @@
     margin-bottom: 8rem !important;
 
     @include respond(tab-port) {
-        padding-bottom: 5rem !important;
+        padding-bottom: 0rem !important;
     }
 }
 
