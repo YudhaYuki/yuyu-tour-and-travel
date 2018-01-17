@@ -15,6 +15,7 @@
         top: 0;
         left: 0;
         width: 100%;
+        -webkit-backface-visibility: hidden;  // For safari
         backface-visibility: hidden;
         border-radius: 3px;
         // overflow:hidden; // The images overflowing the parents in these corner, so where the corners are, the images should not be and so we can simply hide these parts, so overflow hidden does that for us.
