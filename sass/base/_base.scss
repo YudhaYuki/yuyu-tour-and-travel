@@ -36,3 +36,10 @@ body {
         padding: 0;
     }
 }
+
+
+// Pseudo element to change color when text selected
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
