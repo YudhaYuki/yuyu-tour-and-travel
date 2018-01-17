@@ -161,9 +161,17 @@
 
 
 
+    // We want to add medai query for touch screen because HOVER does not exist in touh devices
+    // The problem here, we use this respond mixin in order to write this media query.
+    // So it is impossible to write a second conditionto media query
 
-    @include respond (tab-port) {
-         
+    // What we can do, is to write the real media query
+    // Such as going back to min=xin file, and copy tab-port here for example (Please compare with the prious ones)
+    
+    // @include respond (tab-port) {
+        
+    @media only screen and (max-width: 56.25em),
+            only screen and (hover: none) {
         height: auto; 
         border-radius: 3px;
         background-color: $color-white;
