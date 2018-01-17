@@ -38,7 +38,7 @@ body {
 }
 
 
-// Pseudo element to change color when text selected
+// Pseudo element to change color with our own choice when text selected
 ::selection {
     background-color: $color-primary;
     color: $color-white;
